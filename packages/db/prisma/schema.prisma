@@ -11,14 +11,99 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String?
-  email     String   @unique
-  phone     String?
-  password  String
-  role      Role     @default(User)
+  id                  Int      @id @default(autoincrement())
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  name                String?
+  email               String   @unique
+  phone               String?
+  password            String
+  role                Role     @default(User)
+  frequentFlyerNumber String
+}
+
+model Airline {
+  id   Int    @id @default(autoincrement())
+  name String
+  code String
+}
+
+model Aircraft {
+  id                Int    @id @default(autoincrement())
+  name              String
+  model             String
+  manufacturingYear Int
+}
+
+model Passanger {
+  id                Int                 @id @default(autoincrement())
+  name              String
+  passprtNumber     String?
+  dateOfBirth       DateTime
+  FlightReservation FlightReservation[]
+}
+
+model Airport {
+  id               Int      @id @default(autoincrement())
+  name             String
+  code             String
+  flightsDeparting Flight[] @relation("departure")
+  flightsArriving  Flight[] @relation("arrival")
+}
+
+model Flight {
+  id                 Int      @id @default(autoincrement())
+  flightNumber       String
+  departure          Airport? @relation("departure", fields: [departureAirportId], references: [id])
+  departureAirportId Int?
+  arrival            Airport? @relation("arrival", fields: [arrivalAirportId], references: [id])
+  arrivalAirportId   Int?
+  durationInMinutes  Int
+}
+
+model FlightInstance {
+  id                Int                 @id @default(autoincrement())
+  departureTime     DateTime
+  arrivalTime       DateTime
+  status            FlightStatus
+  FlightReservation FlightReservation[]
+}
+
+model FlightReservation {
+  id                Int               @id @default(autoincrement())
+  reservationNumber String
+  flight            FlightInstance    @relation(fields: [flightInstanceId], references: [id])
+  flightInstanceId  Int
+  status            ReservationStatus
+  seat              Seat              @relation(fields: [seatId], references: [id])
+  seatId            Int
+  passanger         Passanger         @relation(fields: [passangerId], references: [id])
+  passangerId       Int
+  reservationDate   DateTime
+  payment           Payment           @relation(fields: [paymentId], references: [id])
+  paymentId         Int
+}
+
+model Seat {
+  id                Int                 @id @default(autoincrement())
+  seatNumber        String
+  type              SeatType
+  class             SeatClass
+  FlightReservation FlightReservation[]
+}
+
+model FlightSeat {
+  id                Int    @id @default(autoincrement())
+  fare              Float
+  reservationNumber String
+}
+
+model Payment {
+  id                Int                 @id @default(autoincrement())
+  paymentId         String              @unique
+  amount            Float
+  status            PaymentStatus
+  FlightReservation FlightReservation[]
 }
 
 enum Role {
@@ -27,4 +112,62 @@ enum Role {
   Crew
   Pilot
   FrontDeskOfficer
+}
+
+enum AccountStatus {
+  Active
+  Closed
+  Canceled
+  Blacklisted
+  Blocked
+}
+
+enum SeatType {
+  Regular
+  Accessible
+  EmergencyExit
+  ExtraLegRoom
+}
+
+enum SeatClass {
+  Economy
+  EconomyPlus
+  PreferredEconomy
+  Business
+  FirstClass
+}
+
+enum ReservationStatus {
+  Requested
+  Pending
+  Confirmed
+  CheckedIn
+  Canceled
+  Abandoned
+}
+
+enum PaymentStatus {
+  Unpaid
+  Pending
+  Completed
+  Failed
+  Declined
+  Cancelled
+  Abandoned
+  Settling
+  Settled
+  Refunded
+}
+
+enum FlightStatus {
+  Active
+  Scheduled
+  Delayed
+  Departed
+  Landed
+  InAir
+  Arrived
+  Canceled
+  Diverted
+  Unknown
 }
