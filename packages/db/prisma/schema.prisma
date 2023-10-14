@@ -19,7 +19,7 @@ model User {
   phone               String?
   password            String
   role                Role     @default(User)
-  frequentFlyerNumber String
+  frequentFlyerNumber String?
 }
 
 model Airline {
