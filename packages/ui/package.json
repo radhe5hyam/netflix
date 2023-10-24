@@ -9,14 +9,22 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@fly-high/eslint-config-custom": "workspace:*",
+    "@fly-high/tailwind-config": "workspace:*",
+    "@fly-high/tsconfig": "workspace:*",
     "@turbo/gen": "^1.10.12",
     "@types/node": "^20.5.2",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@fly-high/eslint-config-custom": "workspace:*",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
     "react": "^18.2.0",
     "tailwindcss": "^3.3.3",
-    "@fly-high/tsconfig": "workspace:*",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-form": "^0.0.3",
+    "@radix-ui/themes": "^2.0.0"
   }
 }

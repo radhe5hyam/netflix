@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-
+import {SignUp} from '@fly-high/ui'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <h2>Hello world</h2>
+    <>
+    <div className='bg-blue-600'>Hello</div>
+    <SignUp/>
+    </>
   )
 }
