@@ -7,11 +7,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@fly-high/tsconfig": "workspace:*",
+    "@netflix/tsconfig": "workspace:*",
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.6.10",
-  "name": "@fly-high"
+  "name": "@netflix"
 }

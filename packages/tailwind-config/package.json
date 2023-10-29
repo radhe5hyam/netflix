@@ -1,5 +1,5 @@
 {
-  "name": "@fly-high/tailwind-config",
+  "name": "@netflix/tailwind-config",
   "version": "0.0.0",
   "private": true,
   "main": "index.ts",

@@ -1,7 +1,7 @@
 // tailwind config is required for editor support
 
 import type { Config } from "tailwindcss";
-import sharedConfig from "@fly-high/tailwind-config/tailwind.config.ts";
+import sharedConfig from "@netflix/tailwind-config/tailwind.config.ts";
 
 const config: Pick<Config, "presets"> = {
   presets: [sharedConfig],

@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fly-high/db": "workspace:*",
-    "@fly-high/ui": "workspace:*",
+    "@netflix/db": "workspace:*",
+    "@netflix/ui": "workspace:*",
     "bcrypt": "^5.1.1",
     "jsonwebtoken": "^9.0.2",
     "next": "13.5.4",
@@ -18,9 +18,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@fly-high/tailwind-config": "workspace:*",
-    "@fly-high/eslint-config-custom": "workspace:*",
-    "@fly-high/tsconfig": "workspace:*",
+    "@netflix/tailwind-config": "workspace:*",
+    "@netflix/eslint-config-custom": "workspace:*",
+    "@netflix/tsconfig": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

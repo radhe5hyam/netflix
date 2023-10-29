@@ -1,9 +1,8 @@
-# FlyHigh
+# Netflix
 
-Airline Management System
+A Netflix Clone
 
-Client: https://fly-high-client.vercel.app/
-Admin: https://fly-high-admin.vercel.app/
+Client: https://netflix-client.vercel.app/
 
 ## What's inside?
 

@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ["@fly-high/ui"],
+  transpilePackages: ["@netflix/ui"],
 };

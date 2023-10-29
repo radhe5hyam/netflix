@@ -8,7 +8,7 @@ importers:
 
   .:
     devDependencies:
-      '@fly-high/tsconfig':
+      '@netflix/tsconfig':
         specifier: workspace:*
         version: link:packages/tsconfig
       eslint:
@@ -21,73 +21,12 @@ importers:
         specifier: latest
         version: 1.10.15
 
-  apps/admin:
-    dependencies:
-      '@fly-high/db':
-        specifier: workspace:*
-        version: link:../../packages/db
-      '@fly-high/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      bcrypt:
-        specifier: ^5.1.1
-        version: 5.1.1
-      jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
-      next:
-        specifier: 13.5.4
-        version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: ^18
-        version: 18.2.0
-      react-dom:
-        specifier: ^18
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@fly-high/eslint-config-custom':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-custom
-      '@fly-high/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
-      '@fly-high/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
-      '@types/node':
-        specifier: ^20
-        version: 20.5.2
-      '@types/react':
-        specifier: ^18
-        version: 18.2.5
-      '@types/react-dom':
-        specifier: ^18
-        version: 18.2.3
-      autoprefixer:
-        specifier: ^10.4.16
-        version: 10.4.16(postcss@8.4.31)
-      eslint:
-        specifier: ^8
-        version: 8.48.0
-      eslint-config-next:
-        specifier: 13.5.4
-        version: 13.5.4(eslint@8.48.0)(typescript@5.2.2)
-      postcss:
-        specifier: ^8.4.31
-        version: 8.4.31
-      tailwindcss:
-        specifier: ^3.3.3
-        version: 3.3.3
-      typescript:
-        specifier: ^5
-        version: 5.2.2
-
   apps/client:
     dependencies:
-      '@fly-high/db':
+      '@netflix/db':
         specifier: workspace:*
         version: link:../../packages/db
-      '@fly-high/ui':
+      '@netflix/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       bcrypt:
@@ -106,13 +45,13 @@ importers:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@fly-high/eslint-config-custom':
+      '@netflix/eslint-config-custom':
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
-      '@fly-high/tailwind-config':
+      '@netflix/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
-      '@fly-high/tsconfig':
+      '@netflix/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@types/node':
@@ -178,20 +117,23 @@ importers:
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
-      '@radix-ui/react-form':
-        specifier: ^0.0.3
-        version: 0.0.3(@types/react-dom@18.2.3)(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-icons':
+        specifier: ^1.3.0
+        version: 1.3.0(react@18.2.0)
       '@radix-ui/themes':
         specifier: ^2.0.0
         version: 2.0.0(@types/react-dom@18.2.3)(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.47.0
+        version: 7.47.0(react@18.2.0)
     devDependencies:
-      '@fly-high/eslint-config-custom':
+      '@netflix/eslint-config-custom':
         specifier: workspace:*
         version: link:../eslint-config-custom
-      '@fly-high/tailwind-config':
+      '@netflix/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
-      '@fly-high/tsconfig':
+      '@netflix/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@turbo/gen':
@@ -1197,6 +1139,14 @@ packages:
       '@types/react-dom': 18.2.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@radix-ui/react-icons@1.3.0(react@18.2.0):
+    resolution: {integrity: sha512-jQxj/0LKgp+j9BiTXz3O3sgs26RNet2iLWmsPyRz2SIcR4q/4SbazXfnYwbAr+vLYKSfc7qxzyGQA1HLlYiuNw==}
+    peerDependencies:
+      react: ^16.x || ^17.x || ^18.x
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@radix-ui/react-id@1.0.1(@types/react@18.2.5)(react@18.2.0):
@@ -5639,6 +5589,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hook-form@7.47.0(react@18.2.0):
+    resolution: {integrity: sha512-F/TroLjTICipmHeFlMrLtNLceO2xr1jU3CyiNla5zdwsGUGu2UOxxR4UyJgLlhMwLW/Wzp4cpJ7CPfgJIeKdSg==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is@16.13.1:

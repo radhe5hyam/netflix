@@ -1,5 +1,5 @@
 {
-  "name": "@fly-high/db",
+  "name": "@netflix/db",
   "version": "1.0.0",
   "description": "",
   "main": "./index.ts",

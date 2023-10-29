@@ -1,5 +1,5 @@
 {
-  "extends": "@fly-high/tsconfig/nextjs.json",
+  "extends": "@netflix/tsconfig/nextjs.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }]
   },
